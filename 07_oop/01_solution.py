@@ -13,7 +13,7 @@ class ElectricCar(Car):
 
 
 my_tesla = ElectricCar("Tesla", "Model S", "85KWH")
-print(my_tesla)
+print(my_tesla.full_name())
 
 
 
