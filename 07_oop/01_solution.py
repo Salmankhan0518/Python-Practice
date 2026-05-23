@@ -5,10 +5,17 @@ class Car:
 
     def get_brand(self):
         return self.__brand + " !"
+
+    def set_brand(self, new_brand):
+        if isinstance(new_brand, str) and new_brand.strip() != "":
+            self.__brand = new_brand
+        else:
+            print("Error: Inva;id brand name!")    
+
         
 
     def full_name(self):
-        return f"{self.__brand} {self.model}" 
+        return f"{self.__brand} {self.model}"
 
 class ElectricCar(Car):
     def __init__(self, brand, model, batterySize):
@@ -18,6 +25,7 @@ class ElectricCar(Car):
 
 my_tesla = ElectricCar("Tesla", "Model S", "85KWH")
 # print(my_tesla.__brand)
+my_tesla.set_brand("Honda")
 print(my_tesla.get_brand())
 
 
