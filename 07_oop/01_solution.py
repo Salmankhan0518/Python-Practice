@@ -10,10 +10,12 @@ class Car:
         if isinstance(new_brand, str) and new_brand.strip() != "":
             self.__brand = new_brand
         else:
-            print("Error: Inva;id brand name!")    
+            print("Error: Inva;id brand name!") 
+
+    def fuel_type(self):
+        return "Fuel type is Deisel or Petrol"           
 
         
-
     def full_name(self):
         return f"{self.__brand} {self.model}"
 
@@ -22,11 +24,18 @@ class ElectricCar(Car):
         super().__init__(brand, model)
         self.batterySize = batterySize
 
+    def fuel_type(self):
+        return "Fuel type is Electrical Charge"    
+
 
 my_tesla = ElectricCar("Tesla", "Model S", "85KWH")
+safari = Car("Tata", "Safari")
+
 # print(my_tesla.__brand)
-my_tesla.set_brand("Honda")
-print(my_tesla.get_brand())
+# my_tesla.set_brand("Honda")
+
+print(my_tesla.fuel_type())
+print(safari.fuel_type())
 
 
 
