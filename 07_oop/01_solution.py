@@ -20,6 +20,10 @@ class Car:
         
     def full_name(self):
         return f"{self.__brand} {self.model}"
+    
+    @staticmethod
+    def car_description():
+        return "Cars are means of transpotation"
 
 class ElectricCar(Car):
     def __init__(self, brand, model, batterySize):
@@ -32,7 +36,7 @@ class ElectricCar(Car):
 
 my_tesla = ElectricCar("Tesla", "Model S", "85KWH")
 safari = Car("Tata", "Safari")
-safari2 = Car("Test", "Test")
+my_car = Car("Test", "Test")
 
 # print(my_tesla.__brand)
 # my_tesla.set_brand("Honda")
@@ -40,6 +44,10 @@ safari2 = Car("Test", "Test")
 print(my_tesla.fuel_type())
 print(safari.fuel_type())
 print(Car.total_car)
+
+
+# print(my_car.car_description())
+print(Car.car_description())
 
 
 
