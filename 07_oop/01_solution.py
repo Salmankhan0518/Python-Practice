@@ -41,20 +41,27 @@ class ElectricCar(Car):
 
 
 my_tesla = ElectricCar("Tesla", "Model S", "85KWH")
-safari = Car("Tata", "Safari")
-my_car = Car("Test", "Test")
+
+print(isinstance(my_tesla, Car))
+print(isinstance(my_tesla, ElectricCar))
+
+
+
+
+
+# safari = Car("Tata", "Safari")
+# my_car = Car("Test", "Test")
 # my_car.model = "City"
 
 # print(my_tesla.__brand)
 # my_tesla.set_brand("Honda")
 
-print(my_tesla.fuel_type())
-print(safari.fuel_type())
+# print(my_tesla.fuel_type())
+# print(safari.fuel_type())
 
-print(Car.total_car)
+# print(Car.total_car)
 
-print(my_car.model)
-
+# print(my_car.model)
 
 # print(my_car.car_description())
 # print(Car.car_description())
