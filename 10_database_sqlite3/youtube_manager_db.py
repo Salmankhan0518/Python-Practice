@@ -1,8 +1,8 @@
 import sqlite3
 
-conn = sqlite3.connect('youtube_videos.db')
+con = sqlite3.connect('youtube_videos.db')
 
-cursor = conn.cursor()
+cursor = con.cursor()
 
 cursor.execute(''' 
     CREATE TABLE IF NOT EXISTS videos (
@@ -19,15 +19,15 @@ def list_videos():
 
 def add_video(name, time):
     cursor.execute("INSERT INTO videos (name, time) VALUES (?, ?)", (name, time))
-    cursor.commit()
+    con.commit()
 
 def update_video(video_id, new_name, new_time):
     cursor.execute("UPDATE videos SET name = ?, time = ? WHERE id = ?", (new_name, new_time, video_id))
-    cursor.commit()
+    con.commit()
 
 def delete_video(video_id):
     cursor.execute("DELETE FROM videos WHERE id = ?", (video_id,))
-    cursor.commit()
+    con.commit()
 
 
 def main():
@@ -60,7 +60,7 @@ def main():
         else:
             print("Invalid Choice ")       
 
-    conn.close()           
+    con.close()           
 
 
 
