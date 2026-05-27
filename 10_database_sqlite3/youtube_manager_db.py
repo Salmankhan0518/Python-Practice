@@ -13,7 +13,9 @@ cursor.execute('''
  ''')
 
 def list_videos():
-    pass
+    cursor.execute("SELECT * FROM videos")
+    for row in cursor.fetchall():
+        print(row)
 
 def add_video():
     pass
