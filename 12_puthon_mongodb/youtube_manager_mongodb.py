@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from bson import ObjectId
 
 client = MongoClient("mongodb+srv://youtubepy:youtubepy@cluster0.4anmxby.mongodb.net/")
 # not a good idea to include id and password in code file
@@ -17,7 +18,7 @@ def add_video(name, time):
 
 def update_video(video_id, new_name, new_time):
     video_collection.update_one(
-        {'_id': video_id},
+        {'_id': ObjectId(video_id)},
         {"$set": {"name": new_name, "time": new_time}}
     )
 
